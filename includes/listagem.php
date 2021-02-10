@@ -18,7 +18,7 @@ require __DIR__.'/../App/Controller/read.php';
     <table class="table bg-light mt-3">
         <thead>
           <tr>
-            <th>ID</th>
+            <!-- <th>ID</th> -->
             <th>Título</th>
             <th>Descrição</th>
             <th>Status</th>

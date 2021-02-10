@@ -20,9 +20,17 @@ $produtoDao = new App\Model\ProdutoDao();
 
 $resultados = '';
 foreach (array_reverse($produtoDao->read()) as $value) {
-  $resultados .= '<tr class="bg-light">
-                      <td>' . $value['id'] . '</td>
-                      <td>' . $value['titulo'] . '</td>
+  $resultados .= '<tr class="bg-light ">
+
+
+                      <td>
+                        <a href="detalhes.php?id=' . $value['id'] . '">
+                          <button type="button" class="btn btn-secondary  ">
+                            ' . $value['titulo'] . '
+                          </button>
+                        </a>
+                      </td>
+
                       <td>' . $value['descricao'] . '</td>
                       <td>' . ($value['ativo'] == 's' ?
     '<span class="badge badge-success">disponível</span>' :
