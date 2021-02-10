@@ -4,6 +4,9 @@ require __DIR__.'/../../vendor/autoload.php';
 
 define('TITLE','Cadastrar');
 
+  $titulo = '';
+  $descricao = '';
+  $ativo = 's'; 
 
 //VALIDAÇÃO DO POST
 if(isset($_POST['titulo'],$_POST['descricao'],$_POST['ativo'])){

@@ -12,28 +12,26 @@
 
     <div class="form-group">
       <label>Título</label>
-      <input type="text" class="form-control" name="titulo" value="" placeholder="Título da vaga">
+      <input type="text" class="form-control" name="titulo" value="<?=$titulo?>" placeholder="Título da vaga">
     </div>
 
     <div class="form-group">
       <label>Descrição</label>
-      <textarea class="form-control" name="descricao" rows="3" placeholder="Insira aqui uma descrição da função..."></textarea>
+      <textarea class="form-control" name="descricao" rows="3" placeholder="Insira aqui uma descrição da função..."><?echo $descricao == '' ? '' : $descricao ?></textarea>
     </div>
+
 
     <div class="form-group">
       <label>Status</label>
       <br>
-
-
-
       <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
 
         <label class="btn btn-secondary active">
-          <input type="radio" name="ativo" id="option1" autocomplete="off" checked value="s"> Dispovível
+          <input type="radio" name="ativo" id="option1" autocomplete="off" <?echo $ativo == 's' ? "checked" : "" ?> value="s"> Dispovível
         </label>
 
         <label class="btn btn-secondary">
-          <input type="radio" name="ativo" id="option2" autocomplete="off" value="n"> Indisponível
+          <input type="radio" name="ativo" id="option2" autocomplete="off" <?echo $ativo == 'n' ? "checked" : "" ?> value="n"> Indisponível
         </label>
 
       </div>
