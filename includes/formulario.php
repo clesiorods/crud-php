@@ -2,45 +2,52 @@
 
   <section>
     <a href="index.php">
-      <button class="btn btn-success">Voltar</button>
+      <button class="btn btn-primary btn-lg">Voltar</button>
     </a>
   </section>
 
-  <h2 class="mt-3"><?=TITLE?></h2>
+  <h2 class="mt-4"><?=TITLE?></h2>
 
   <form method="post">
 
     <div class="form-group">
       <label>Título</label>
-      <input type="text" class="form-control" name="titulo" value="">
+      <input type="text" class="form-control" name="titulo" value="" placeholder="Título da vaga">
     </div>
 
     <div class="form-group">
       <label>Descrição</label>
-      <textarea class="form-control" name="descricao" rows="5"></textarea>
+      <textarea class="form-control" name="descricao" rows="3" placeholder="Insira aqui uma descrição da função..."></textarea>
     </div>
 
     <div class="form-group">
       <label>Status</label>
+      <br>
 
-      <div>
-          <div class="form-check form-check-inline">
-            <label class="form-control">
-              <input type="radio" name="ativo" value="s" checked> Ativo
-            </label>
-          </div>
 
-          <div class="form-check form-check-inline">
-            <label class="form-control">
-              <input type="radio" name="ativo" value="n"> Inativo
-            </label>
-          </div>
+
+      <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
+
+        <label class="btn btn-secondary active">
+          <input type="radio" name="ativo" id="option1" autocomplete="off" checked value="s"> Dispovível
+        </label>
+
+        <label class="btn btn-secondary">
+          <input type="radio" name="ativo" id="option2" autocomplete="off" value="n"> Indisponível
+        </label>
+
       </div>
+
+
+
+
+
+
 
     </div>
 
-    <div class="form-group">
-      <button type="submit" class="btn btn-success">Enviar</button>
+    <div class="form-group d-flex justify-content-end">
+      <button type="submit" class="btn btn-success btn-lg w-25 p-3 mt--5">Enviar</button>
     </div>
 
   </form>

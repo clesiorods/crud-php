@@ -9,7 +9,7 @@ require __DIR__.'/../App/Controller/read.php';
 
   <section>
     <a href="cadastrar.php">
-      <button class="btn btn-success">Nova vaga</button>
+      <button class="btn btn-success btn-lg">Nova vaga</button>
     </a>
   </section>
 

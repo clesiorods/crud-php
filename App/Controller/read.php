@@ -22,11 +22,15 @@ $produtoDao->read();
 
   $resultados = '';
   foreach($produtoDao->read() as $value){
-    $resultados .= '<tr>
+    $resultados .= '<tr class="bg-light">
                       <td>'.$value['id'].'</td>
                       <td>'.$value['titulo'].'</td>
                       <td>'.$value['descricao'].'</td>
-                      <td>'.($value['ativo'] == 's' ? 'Ativo' : 'Inativo').'</td>
+                      <td>'.($value['ativo'] == 's' ?
+                                                    '<span class="badge badge-success">disponível</span>' :
+                                                    '<span class="badge badge-light">contratado</span>').'
+                                                  </td>
+
                       <td>'.date('d/m/Y à\s H:i:s',strtotime($value['data'])).'</td>
                       <td>
                         <a href="editar.php?id='.$value['id'].'">

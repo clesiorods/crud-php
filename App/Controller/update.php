@@ -5,6 +5,13 @@ require __DIR__.'./../../vendor/autoload.php';
 define('TITLE','Editar');
 
 
+$produtoDao = new App\Model\ProdutoDao();
+
+var_dump($produtoDao->getOne($_GET['id']));
+
+
+
+
 //VALIDAÇÃO DO POST
 if(isset($_POST['titulo'],$_POST['descricao'],$_POST['ativo'])){
 
@@ -16,7 +23,7 @@ if(isset($_POST['titulo'],$_POST['descricao'],$_POST['ativo'])){
   $produto->setAtivo($_POST['ativo']);
   $produto->setData();
 
-  $produtoDao = new App\Model\ProdutoDao();
+  
   $produtoDao->update($produto);
 
   header('location: index.php?status=success');

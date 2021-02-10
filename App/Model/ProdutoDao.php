@@ -51,4 +51,19 @@ namespace App\Model;
       $stmt->bindValue(1, $id);
       $stmt->execute();
     }
+
+
+
+    public function getOne($id) {
+      $sql = 'SELECT * FROM produtos WHERE id = ?';
+
+      $stmt = Conexao::getConn()->prepare($sql);
+      $stmt->bindValue(1, $id);
+      
+      $stmt->execute();
+
+      $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+      return $resultado;
+    }
   }
