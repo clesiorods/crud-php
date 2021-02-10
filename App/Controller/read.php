@@ -22,19 +22,18 @@ $resultados = '';
 foreach (array_reverse($produtoDao->read()) as $value) {
   $resultados .= '<tr class="bg-light ">
 
-
                       <td>
                         <a href="detalhes.php?id=' . $value['id'] . '">
                           <button type="button" class="btn btn-secondary  ">
-                            ' . $value['titulo'] . '
+                            ' . $value['funcao'] . '
                           </button>
                         </a>
                       </td>
 
-                      <td>' . $value['descricao'] . '</td>
+                      <td>' . $value['empresa'] . '</td>
                       <td>' . ($value['ativo'] == 's' ?
     '<span class="badge badge-success">disponível</span>' :
-    '<span class="badge badge-light">contratado</span>') . '
+    '<span class="badge badge-light text-muted">contratado</span>') . '
                                                   </td>
 
                       <td>' . date('d/m/Y à\s H:i:s', strtotime($value['data'])) . '</td>

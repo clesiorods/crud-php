@@ -19,8 +19,8 @@ require __DIR__.'/../App/Controller/read.php';
         <thead>
           <tr>
             <!-- <th>ID</th> -->
-            <th>Título</th>
-            <th>Descrição</th>
+            <th>Função</th>
+            <th>Empresa</th>
             <th>Status</th>
             <th>Data</th>
             <th>Ações</th>

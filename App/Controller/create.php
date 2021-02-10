@@ -4,25 +4,33 @@ require __DIR__.'/../../vendor/autoload.php';
 
 define('TITLE','Cadastrar');
 
-  $titulo = '';
+  $funcao = '';
+  $empresa = '';
   $descricao = '';
+  $salario = '';
   $ativo = 's'; 
 
   
 
 //DIFERENCIAÇÃO DE CRIAÇÃO E ATUALIZAÇÃO DE CADASTRO
-if(isset($_POST['titulo'],$_POST['descricao'],$_POST['ativo'])){
+if(isset($_POST['funcao'],$_POST['empresa'],$_POST['descricao'],$_POST['salario'],$_POST['ativo'])){
 
-  $produto = new \App\Model\Produto();
+  $vaga = new \App\Model\Vaga();
 
-  $produto->setTitulo($_POST['titulo']);
-  $produto->setDescricao($_POST['descricao']);
-  $produto->setAtivo($_POST['ativo']);
-  $produto->setData();
+  $vaga->setFuncao($_POST['funcao']);
+  $vaga->setEmpresa($_POST['empresa']);
+  $vaga->setDescricao($_POST['descricao']);
+  $vaga->setSalario($_POST['salario']);
+  $vaga->setAtivo($_POST['ativo']);
+  $vaga->setData();
 
   $produtoDao = new App\Model\ProdutoDao();
-  $produtoDao->create($produto);
+  $produtoDao->create($vaga);
 
-  header('location: index.php?status=success');
-  exit;
+  if($vaga->getSalario() and $vaga->getFuncao() and $vaga->getDescricao() and $vaga->getEmpresa!== '') {
+    header('location: index.php?status=success');
+    exit;
+  } else {
+    header('location: index.php?status=error');
+  }
 }

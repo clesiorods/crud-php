@@ -4,13 +4,44 @@ namespace App\Model;
 
 
 //MODELO DE PRODUTO A SER SALVO NO BANCO DE DADOS
-  class Produto {
+  class Vaga {
 
     private $id;
-    private $titulo;
+    private $funcao;
+    private $empresa;
     private $descricao;
+    private $salario;
     private $ativo;
     private $data;
+
+
+
+    public function setId($id) {
+      $this->id = $id;
+    }
+    public function getId() {
+      return $this->id;
+    }
+
+
+
+    public function setFuncao($f) {
+      $this->funcao = $f;
+    }
+    public function getFuncao() {
+      return $this->funcao;
+    }
+
+
+
+
+    public function setEmpresa($empresa) {
+      $this->empresa = $empresa;
+    }
+    public function getEmpresa() {
+      return $this->empresa;
+    }
+
 
 
     public function setTitulo($t) {
@@ -29,12 +60,14 @@ namespace App\Model;
     }
 
 
-    public function setId($id) {
-      $this->id = $id;
+    public function setSalario($s) {
+      $this->salario = $s;
     }
-    public function getId() {
-      return $this->id;
+    public function getSalario() {
+      return $this->salario;
     }
+
+
 
 
     public function setAtivo($a) {

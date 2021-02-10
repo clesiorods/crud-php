@@ -26,7 +26,7 @@ if($editavel) {
 //VALIDAÇÃO DO POST
 if(isset($_POST['titulo'],$_POST['descricao'],$_POST['ativo'])){
 
-  $produto = new \App\Model\Produto();
+  $produto = new \App\Model\Vaga();
 
   $produto->setId($_GET['id']);
   $produto->setTitulo($_POST['titulo']);

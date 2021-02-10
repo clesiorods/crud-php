@@ -5,21 +5,25 @@ namespace App\Model;
   class ProdutoDao {
 
     //CRIANDO PRODUTO NO BANCO DE DADOS
-    public function create(Produto $p) {
-      $sql = 'INSERT INTO produtos (titulo, descricao, ativo, data) VALUES (?,?,?,?)';
+    public function create(Vaga $v) {
+      $sql = 'INSERT INTO vaga (funcao, empresa, descricao, salario, ativo, data) VALUES (?,?,?,?,?,?)';
 
       $stmt = Conexao::getConn()->prepare($sql);
-      $stmt->bindValue(1, $p->getTitulo());
-      $stmt->bindValue(2, $p->getDescricao());
-      $stmt->bindValue(3, $p->getAtivo());
-      $stmt->bindValue(4, $p->getData());
+      $stmt->bindValue(1, $v->getFuncao());
+      $stmt->bindValue(2, $v->getEmpresa());
+      $stmt->bindValue(3, $v->getDescricao());
+      $stmt->bindValue(4, $v->getSalario());
+      $stmt->bindValue(5, $v->getAtivo());
+      $stmt->bindValue(6, $v->getData());
 
       $stmt->execute();
+
+      return true;
     }
 
-    //LENDO TODOS OS PRODUTOS DO BANCO DE DADOS
+    //LENDO TODOS OS vaga DO BANCO DE DADOS
     public function read() {
-      $sql = 'SELECT * FROM produtos';
+      $sql = 'SELECT * FROM vaga';
 
       $stmt = Conexao::getConn()->prepare($sql);
       $stmt->execute();
@@ -34,14 +38,15 @@ namespace App\Model;
 
 
     //ATUALIZANDO PRODUTO DO BANCO DE DADOS
-    public function update(Produto $p) {
-      $sql = 'UPDATE produtos SET titulo = ?, descricao = ?, ativo = ? WHERE id = ?';
+    public function update(Vaga $v) {
+      $sql = 'UPDATE vaga SET funcao = ?, empresa = ?, descricao = ?, salario = ?, ativo = ? WHERE id = ?';
 
       $stmt = Conexao::getConn()->prepare($sql);
-      $stmt->bindValue(1, $p->getTitulo());
-      $stmt->bindValue(2, $p->getDescricao());
-      $stmt->bindValue(3, $p->getAtivo());
-      $stmt->bindValue(4, $p->getId());
+      $stmt->bindValue(1, $v->getFuncao());
+      $stmt->bindValue(2, $v->getEmpresa());
+      $stmt->bindValue(3, $v->getDescricao());
+      $stmt->bindValue(4, $v->getSalario());
+      $stmt->bindValue(5, $v->getAtivo());
 
       $stmt->execute();
     }
@@ -49,7 +54,7 @@ namespace App\Model;
 
     //DELETANDO PRODUTO DO BANCO DE DADOS
     public function delete($id) {
-      $sql = 'DELETE FROM produtos WHERE id = ?';
+      $sql = 'DELETE FROM vaga WHERE id = ?';
 
       $stmt = Conexao::getConn()->prepare($sql);
       $stmt->bindValue(1, $id);
@@ -57,9 +62,9 @@ namespace App\Model;
     }
 
 
-    //SELECIONANDO UM DOS PRODUTOS DO BANCO DE DADOS
+    //SELECIONANDO UM DOS vaga DO BANCO DE DADOS
     public function getOne($id) {
-      $sql = 'SELECT * FROM produtos WHERE id = ?';
+      $sql = 'SELECT * FROM vaga WHERE id = ?';
 
       $stmt = Conexao::getConn()->prepare($sql);
       $stmt->bindValue(1, $id);
