@@ -1,9 +1,10 @@
 <?php 
 namespace App\Model;
 
-
+//CLASSE PARA INSTÂNCIA DE CONTROLE DO BANCO DE DADOS
   class ProdutoDao {
 
+    //CRIANDO PRODUTO NO BANCO DE DADOS
     public function create(Produto $p) {
       $sql = 'INSERT INTO produtos (titulo, descricao, ativo, data) VALUES (?,?,?,?)';
 
@@ -16,7 +17,7 @@ namespace App\Model;
       $stmt->execute();
     }
 
-
+    //LENDO TODOS OS PRODUTOS DO BANCO DE DADOS
     public function read() {
       $sql = 'SELECT * FROM produtos';
 
@@ -32,6 +33,7 @@ namespace App\Model;
     }
 
 
+    //ATUALIZANDO PRODUTO DO BANCO DE DADOS
     public function update(Produto $p) {
       $sql = 'UPDATE produtos SET titulo = ?, descricao = ?, ativo = ? WHERE id = ?';
 
@@ -44,6 +46,8 @@ namespace App\Model;
       $stmt->execute();
     }
 
+
+    //DELETANDO PRODUTO DO BANCO DE DADOS
     public function delete($id) {
       $sql = 'DELETE FROM produtos WHERE id = ?';
 
@@ -53,13 +57,12 @@ namespace App\Model;
     }
 
 
-
+    //SELECIONANDO UM DOS PRODUTOS DO BANCO DE DADOS
     public function getOne($id) {
       $sql = 'SELECT * FROM produtos WHERE id = ?';
 
       $stmt = Conexao::getConn()->prepare($sql);
       $stmt->bindValue(1, $id);
-      
       $stmt->execute();
 
       $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);

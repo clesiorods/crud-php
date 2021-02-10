@@ -8,7 +8,9 @@ define('TITLE','Cadastrar');
   $descricao = '';
   $ativo = 's'; 
 
-//VALIDAÇÃO DO POST
+  
+
+//DIFERENCIAÇÃO DE CRIAÇÃO E ATUALIZAÇÃO DE CADASTRO
 if(isset($_POST['titulo'],$_POST['descricao'],$_POST['ativo'])){
 
   $produto = new \App\Model\Produto();

@@ -6,14 +6,14 @@ define('TITLE','Excluir');
 
 
 
-//VALIDAÇÃO DO ID
+//VALIDAÇÃO DO PRODUTO PARA DETETE
 if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
   header('location: index.php?status=error');
   exit;
 }
 
 
-//VALIDAÇÃO DO POST
+//DELETANDO PRODUTO
 if(isset($_POST['excluir'])){
   
   $produtoDao = new App\Model\ProdutoDao();

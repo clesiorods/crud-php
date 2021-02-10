@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+
+//MODELO DE PRODUTO A SER SALVO NO BANCO DE DADOS
   class Produto {
 
     private $id;

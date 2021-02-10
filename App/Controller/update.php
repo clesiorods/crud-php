@@ -1,8 +1,7 @@
 <?php
 
-use App\Model\ProdutoDao;
-
 require __DIR__.'./../../vendor/autoload.php';
+
 
 define('TITLE','Editar');
 
@@ -10,9 +9,8 @@ define('TITLE','Editar');
 $produtoDao = new App\Model\ProdutoDao();
 $editavel = $produtoDao->getOne($_GET['id'])[0];
 
-var_dump($editavel['titulo']);
 
-
+//PREENCHIMENTO DOS CAMPOS EM CASO DE EDIÇÃO
 if($editavel) {
   $titulo = $editavel['titulo'];
   $descricao = $editavel['descricao'];
