@@ -1,4 +1,7 @@
+
 <?php 
+
+///////////////////////// LEIA O ARQUIVO README.MB ///////////////////////////////
 
 require_once 'vendor/autoload.php';
 

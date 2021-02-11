@@ -47,6 +47,7 @@ namespace App\Model;
       $stmt->bindValue(3, $v->getDescricao());
       $stmt->bindValue(4, $v->getSalario());
       $stmt->bindValue(5, $v->getAtivo());
+      $stmt->bindValue(6, $v->getId());
 
       $stmt->execute();
     }
