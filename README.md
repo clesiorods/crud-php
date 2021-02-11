@@ -1,6 +1,7 @@
 
 # CRUD-PHP
-Repositório destinado a armazenar o código fonte de CRUD feito em php, com utilização de Laravel para comunicação com o banco de dados.
+Repositório destinado a armazenar o código fonte de CRUD feito em php, com
+utilização de Laravel para comunicação com o banco de dados.
 
 
 # CONFIGURAÇÃO DE ACESSO AO BANCO DE DADOS

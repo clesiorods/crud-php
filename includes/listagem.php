@@ -15,6 +15,9 @@ require __DIR__.'/../App/Controller/read.php';
 
   <section>
 
+  <h2 class="mt-5">Vagas Disponíveis</h2>
+
+
     <table class="table bg-light mt-3">
         <thead>
           <tr>

@@ -8,8 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-    <footer>
-      <span class="d-flex justify-content-center w-100 p-5 bg-white">Clesio Rodrigues &copy</span>
+    <footer class="bg-white text-secondary pt-5 pb-3">
+      <span class="d-flex justify-content-center w-100 pt-5 ">Clesio Rodrigues &copy | Powered by php</span>
+      <a class="d-flex justify-content-center w-100 p-2 bg-white pb-5 text-secondary" href="https://github.com/clesiorods/crud-php" target="blank">Repositório GitHub</a>
     </footer>
 
   </body>

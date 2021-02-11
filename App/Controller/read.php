@@ -24,7 +24,7 @@ foreach (array_reverse($produtoDao->read()) as $value) {
 
                       <td>
                         <a href="detalhes.php?id=' . $value['id'] . '">
-                          <button type="button" class="btn btn-secondary  ">
+                          <button type="button" class="btn btn-dark  ">
                             ' . $value['funcao'] . '
                           </button>
                         </a>

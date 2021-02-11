@@ -12,25 +12,25 @@
 
     <div class="form-group">
       <label>Função</label>
-      <input type="text" class="form-control" name="funcao" value="<?=$funcao?>" placeholder="Título da vaga">
+      <input type="text" class="form-control w-50" name="funcao" value="<?=$funcao?>" placeholder="Título da vaga">
     </div>
 
 
     <div class="form-group">
       <label>Empresa</label>
-      <input type="text" class="form-control" name="empresa" value="<?=$empresa?>" placeholder="Nome da sua empresa">
+      <input type="text" class="form-control w-50" name="empresa" value="<?=$empresa?>" placeholder="Nome da sua empresa">
     </div>
 
 
     <div class="form-group">
       <label>Descrição</label>
-      <textarea class="form-control" name="descricao" rows="3" placeholder="Insira aqui uma descrição da função..."><?echo $descricao == '' ? '' : $descricao ?></textarea>
+      <textarea class="form-control" name="descricao" rows="5" placeholder="Insira aqui uma descrição da função..."><?echo $descricao == '' ? '' : $descricao ?></textarea>
     </div>
 
 
     <div class="form-group">
       <label>Salario</label>
-      <input type="number" class="form-control" name="salario" value="<?=$salario?>" placeholder="Salario a ser pago">
+      <input type="number" class="form-control w-25 d-flex justify-content-center" name="salario" value="<?=$salario?>" placeholder="Salario a ser pago R$">
     </div>
 
 
